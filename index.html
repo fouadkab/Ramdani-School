@@ -618,6 +618,11 @@ function adminDeleteComment(id,cid){
   const p=prompt("كلمة السر");if(btoa(p)!==_0xADMIN){showToast("خطأ");return}
   db.ref("posts/"+id+"/comments/"+cid).remove();loadComments(id);
 }
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+
 </script>
 </body>
 </html>
