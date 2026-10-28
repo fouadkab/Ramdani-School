@@ -168,7 +168,7 @@ footer li button:hover,footer li a:hover{color:var(--gold)}
 .f-slogan{font-size:1.15rem;font-weight:800;color:var(--gold);margin:8px 0}
 .f-bottom{border-top:1px solid rgba(255,255,255,.12);font-size:13px}
 .f-bottom .f-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 18px}
-#back-top{position:fixed;bottom:22px;left:22px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid var(--gold);cursor:pointer;z-index:800;opacity:0;visibility:hidden}
+#back-top{position:fixed;bottom:80px;left:22px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:2px solid var(--gold);cursor:pointer;z-index:800;opacity:0;visibility:hidden}
 #back-top.show{opacity:1;visibility:visible}
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 22px;border-radius:30px;z-index:9999;opacity:0;pointer-events:none;font-weight:700;transition:opacity .3s}
 .toast.show{opacity:1}
@@ -238,6 +238,34 @@ footer li button:hover,footer li a:hover{color:var(--gold)}
         align-items: center;
         gap: 6px;
     }
+     .grid {
+    bottom: 0;
+    position: sticky; 
+    display: flex;
+    background: #fff;
+    border-top: 2px solid var(--gold);
+    justify-content: space-around;
+    text-align: center;
+    z-index: 2500;
+    flex-wrap: wrap;
+  }
+  .grid-btn {
+    padding: 5px;
+    color: #444;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 20px;
+  }
+  .grid-btn i {
+    padding: 5px;
+    border-radius: 20px;
+  }
+  .grid-btn :hover {
+    color: var(--gold);
+    border: 2px solid var(--gold); 
+    
+  }
 </style>
 </head>
 <body>
@@ -461,6 +489,7 @@ footer li button:hover,footer li a:hover{color:var(--gold)}
 <footer>
   <div class="f-grid">
     <div><b style="color:#fff;font-size:1.1rem">ثانوية الشهيد رمضاني محمد</b><div class="f-slogan">معاً نحو مستقبل مشرق</div><p>بالعلم نبني المستقبل .. وبالأخلاق نُرقي</p></div>
+    <button class="menu-btn" style="border:1px solid var(--gold);" onclick="menu(true)" aria-label="فتح القائمة"><i class="fas fa-bars"></i> فتح القائمة</button>      
     <div><h4>المؤسسة</h4><ul><li><button onclick="showSection('about')">عن الثانوية</button></li><li><button onclick="showSection('history')">تاريخ التسمية</button></li><li><button onclick="showSection('law')">سياسة الخصوصية</button></li></ul></div>
     <div><h4>الخدمات</h4><ul><li><button onclick="showSection('results')">نتائج البكالوريا</button></li><li><button onclick="showSection('dist')">التوزيع العام</button></li><li><button onclick="showSection('auth')">حسابي</button></li></ul></div>
     <div><h4>تواصل</h4><p>قرومة - ولاية البويرة - الجزائر</p><p><a href="mailto:Kebladjifouad@gmail.com">Kebladjifouad@gmail.com</a></p><ul><li><button onclick="showSection('dev')">المطور</button></li></ul></div>
@@ -471,13 +500,24 @@ footer li button:hover,footer li a:hover{color:var(--gold)}
       <span>برمجة وتطوير: <b style="color:#fff">فؤاد قبلاجي</b></span>
     </div>
    <div class="f-wrap">
-      <p>آخر تحديث : <b style="color:#fff"> 24 أوكتوبر 2026</b></p>
+      <p>التحديث الكبير (الإصدار الثاني) : <b style="color:#fff"> 24 أوكتوبر 2026</b></p>
+      <p> آخر تحديث: <b style="color:#fff"> 28 أوكتوبر 2026 </b></p>      
     </div>
   </div>
 </footer>
 <button id="back-top" aria-label="أعلى الصفحة" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 <div id="toast" class="toast"></div>
 
+
+<div class="grid">
+ <div class="grid-btn" onclick="showSection('home')"><i class="fas fa-home"></i></div>
+ <div class="grid-btn" onclick="showSection('about')"><i class="fas fa-school"></i></div>
+ <div class="grid-btn" onclick="showSection('news')"><i class="fas fa-plus"></i></div>
+ <div class="grid-btn" onclick="showSection('auth')"><i class="fas fa-user-circle"></i></div>
+ <div class="grid-btn" onclick="showSection('dev')"><i class="fas fa-code"></i></div>
+ <div class="grid-btn" onclick="menu(true)"><i class="fas fa-bars"></i></div>
+</div>  
+        
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
